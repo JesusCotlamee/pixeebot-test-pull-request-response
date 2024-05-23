@@ -1,0 +1,27 @@
+name: Pixeebot Fix Pull Request
+
+on:
+  pull_request:
+    types: [ opened, synchronize, reopened ]
+
+permissions:
+  id-token: write
+
+jobs:
+  pixeebot-fix:
+    name: Pixeebot Fix Pull Request
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - name: Upload file and trigger analysis
+        uses: pixee/upload-tool-results-action@94e3889af8b95e3c33a87b53c0a9a265596c31f0
+        with:
+            tool: 'contrast'
+            contrast-api-url: ${{ secrets.CONTRAST_API_URL }}
+            contrast-org-id: ${{ secrets.CONTRAST_ORG_ID }}
+            contrast-app-id: ${{ secrets.CONTRAST_APP_ID }}
+            contrast-api-key: ${{ secrets.CONTRAST_API_KEY }}
+            contrast-token: ${{ secrets.CONTRAST_TOKEN }}
+            pixee-api-url: 'https://3yn27zgfgb.execute-api.us-east-1.amazonaws.com/prod'
