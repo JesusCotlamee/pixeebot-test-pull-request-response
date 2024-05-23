@@ -1,7 +1,7 @@
 class Simple {
 
   public static void main(String[] args) {
-    if (getBar().equals("test")) {
+    if ("test".equals(getBar())) {
       System.out.println("Hello, World!");
     }
   }
