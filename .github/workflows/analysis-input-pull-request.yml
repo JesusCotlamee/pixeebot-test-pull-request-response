@@ -20,9 +20,9 @@ jobs:
         uses: pixee/upload-tool-results-action@91fff72fb865b0cbc020b9bc5588da2f3500ae50
         with:
             tool: 'contrast'
-            contrast-api-url: ${{ secrets.CONTRAST_API_URL }}
-            contrast-org-id: ${{ secrets.CONTRAST_ORG_ID }}
-            contrast-app-id: ${{ secrets.CONTRAST_APP_ID }}
-            contrast-api-key: ${{ secrets.CONTRAST_API_KEY }}
-            contrast-token: ${{ secrets.CONTRAST_TOKEN }}
+            contrast-api-url: ${{ vars.CONTRAST_API_URL }}
+            contrast-org-id: ${{ vars.CONTRAST_ORG_ID }}
+            contrast-app-id: ${{ vars.CONTRAST_APP_ID }}
+            contrast-api-key: ${{ vars.CONTRAST_API_KEY }}
+            contrast-token: ${{ vars.CONTRAST_TOKEN }}
             pixee-api-url: 'https://3yn27zgfgb.execute-api.us-east-1.amazonaws.com/prod'
