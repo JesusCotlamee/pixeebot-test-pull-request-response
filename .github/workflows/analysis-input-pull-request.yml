@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
       - name: Upload file and trigger analysis
-        uses: pixee/upload-tool-results-action@91fff72fb865b0cbc020b9bc5588da2f3500ae50
+        uses: pixee/upload-tool-results-action@7021965b2348e4dc426a8e89f1bf6892eb08e823
         with:
             tool: 'contrast'
             contrast-api-url: ${{ vars.CONTRAST_API_URL }}
